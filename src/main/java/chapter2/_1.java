@@ -2,9 +2,6 @@ package chapter2;
 
 import org.junit.Test;
 
-/**
- * Created by liyuan on 17-10-20.
- */
 public class _1 {
 
     /**
