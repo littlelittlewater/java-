@@ -4,6 +4,9 @@ import org.junit.Test;
 
 /**
  * 设计线程安全的类
+ *  -收集同步需求
+ *  -依赖状态的操作
+ *  -状态的所有权
  */
 public class _1 {
 
