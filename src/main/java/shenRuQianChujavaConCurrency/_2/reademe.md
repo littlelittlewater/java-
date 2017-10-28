@@ -1,28 +1,15 @@
-##问题
-1. automatic的操作为什么是原子的？
-2. automatic有哪儿些操作是原子的？
-3. 有哪些automatic变量？
-##我的答案
-int addAndGet(int delta)
-以原子方式将给定值与当前值相加。 实际上就是等于线程安全版本的i =i+delta操作。
-boolean compareAndSet(int expect, int update)
-如果当前值 == 预期值，则以原子方式将该值设置为给定的更新值。 如果成功就返回true，否则返回false，并且不修改原值。
-int decrementAndGet()
-以原子方式将当前值减 1。 相当于线程安全版本的--i操作。
-int get()  获取当前值。
-int getAndAdd(int delta)
-以原子方式将给定值与当前值相加。 相当于线程安全版本的t=i;i+=delta;return t;操作。
-int getAndDecrement()
-以原子方式将当前值减 1。 相当于线程安全版本的i--操作。
-int getAndIncrement()
-以原子方式将当前值加 1。 相当于线程安全版本的i++操作。
-int getAndSet(int newValue)
-以原子方式设置为给定值，并返回旧值。 相当于线程安全版本的t=i;i=newValue;return t;操作。
-int incrementAndGet()
-以原子方式将当前值加 1。 相当于线程安全版本的++i操作。 
-void lazySet(int newValue)
-最后设置为给定值。 延时设置变量值，这个等价于set()方法，但是由于字段是volatile类型的，因此次字段的修改会比普通字段（非volatile字段）有稍微的性能延时（尽管可以忽略），所以如果不是想立即读取设置的新值，允许在“后台”修改值，那么此方法就很有用。如果还是难以理解，这里就类似于启动一个后台线程如执行修改新值的任务，原线程就不等待修改结果立即返回（这种解释其实是不正确的，但是可以这么理解）。
-void set(int newValue)
-设置为给定值。 直接修改原始值，也就是i=newValue操作。
-boolean weakCompareAndSet(int expect, int update)
-如果当前值 == 预期值，则以原子方式将该设置为给定的更新值。JSR规范中说：以原子方式读取和有条件地写入变量但不 创建任何 happen-before 排序，因此不提供与除 weakCompareAndSet 目标外任何变量以前或后续读取或写入操作有关的任何保证。大意就是说调用weakCompareAndSet时并不能保证不存在happen-before的发生（也就是可能存在指令重排序导致此操作失败）。但是从Java源码来看，其实此方法并没有实现JSR规范的要求，最后效果和compareAndSet是等效的，都调用了unsafe.compareAndSwapInt()完成操作。
+automatic主要是通过调用底层的unsafe的一个本地方法CAS。
+CAS通过调用JNI的代码实现的。
+JNI:Java Native Interface为JAVA本地调用，允许java调用其他语言。
+关于CPU的锁有如下3种：
+1. 处理器自动保证基本内存操作的原子性。
+1. 使用总线锁保证原子性。
+    所谓总线锁就是使用处理器提供的一个LOCK＃信号，当一个处理器在总线上输出此信号时，其他处理器的请求将被阻塞住,那么该处理器可以独占使用共享内存。
+1. 使用缓存锁保证原子性。
+    处理理器不在总线上声言LOCK＃信号，而是修改内部的内存地址，并允许它的缓存一致性机制来保证操作的原子性，
+    MESI 协议是以缓存行(缓存的基本数据单位，在Intel的CPU上一般是64字节)的几个状态来命名的(全名是Modified、Exclusive、 Share or Invalid)。该协议要求在每个缓存行上维护两个状态位，使得每个数据单位可能处于M、E、S和I这四种状态之一。
+    缓存一致性机制整体来说，是当某块CPU对缓存中的数据进行操作了之后，就通知其他CPU放弃储存在它们内部的缓存，或者从主内存中重新读取。
+
+CAS 算法和 voliate 变量是整个juc的基础
+
+CAS 会存在aba问题
