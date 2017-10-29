@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/javaConcurrencyInpractice/javaConcurrencyInpractice.iml" filepath="$PROJECT_DIR$/javaConcurrencyInpractice/javaConcurrencyInpractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaIo/javaIo.iml" filepath="$PROJECT_DIR$/javaIo/javaIo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/learn.iml" filepath="$PROJECT_DIR$/.idea/learn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shenRuQianChuJUC/shenRuQianChuJUC.iml" filepath="$PROJECT_DIR$/shenRuQianChuJUC/shenRuQianChuJUC.iml" />
+    </modules>
+  </component>
+</project>

@@ -16,6 +16,7 @@
       <module name="java_concurrency_in_practice" target="1.8" />
       <module name="javaConcurrencyInpractice" target="1.8" />
       <module name="javaIo" target="1.8" />
+      <module name="learn" target="1.8" />
       <module name="shenRuQianChuJUC" target="1.8" />
     </bytecodeTargetLevel>
   </component>
