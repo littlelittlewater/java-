@@ -1,7 +1,7 @@
 package bio;
 
 
-import javaio.util.Calculator;
+import util.Calculator;
 
 import java.io.BufferedReader;
 import java.io.IOException;
