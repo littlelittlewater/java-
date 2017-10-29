@@ -1,7 +1,5 @@
 package shenRuQianChujavaConCurrency._7;
 
-/**
- *
- */
-public class AQS {
+//TODO 见md
+public class TODO {
 }
