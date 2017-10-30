@@ -12,13 +12,10 @@ public class Client {
         clientHandle = new ClientHandle(ip,port);
         new Thread(clientHandle,"Server").start();
     }
+
     //向服务器发送消息
     public static boolean sendMsg(String msg) throws Exception{
         if(msg.equals("q")) return false;
         clientHandle.sendMsg(msg);
         return true;
-    }
-    public static void main(String[] args){
-        start();
-    }
-}
+    }}

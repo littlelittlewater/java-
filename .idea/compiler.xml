@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="javaConcurrencyInpractice" />
         <module name="javaIo" />
+        <module name="mianShi" />
         <module name="shenRuQianChuJUC" />
       </profile>
     </annotationProcessing>
@@ -17,6 +18,7 @@
       <module name="javaConcurrencyInpractice" target="1.8" />
       <module name="javaIo" target="1.8" />
       <module name="learn" target="1.8" />
+      <module name="mianShi" target="1.8" />
       <module name="shenRuQianChuJUC" target="1.8" />
     </bytecodeTargetLevel>
   </component>

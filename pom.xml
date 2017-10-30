@@ -24,6 +24,7 @@
         <module>javaConcurrencyInpractice</module>
         <module>javaIo</module>
         <module>shenRuQianChuJUC</module>
+        <module>mianShi</module>
     </modules>
 
     <dependencies>

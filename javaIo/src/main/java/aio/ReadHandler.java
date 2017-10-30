@@ -10,6 +10,7 @@ import java.nio.channels.CompletionHandler;
 public class ReadHandler implements CompletionHandler<Integer, ByteBuffer> {
     //用于读取半包消息和发送应答
     private AsynchronousSocketChannel channel;
+
     public ReadHandler(AsynchronousSocketChannel channel) {
         this.channel = channel;
     }

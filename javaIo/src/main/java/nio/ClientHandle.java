@@ -10,10 +10,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 /**
- * NIO客户端
- *
- * @author yangtao__anxpp.com
- * @version 1.0
+ *  主要代码
  */
 public class ClientHandle implements Runnable {
     private String host;
