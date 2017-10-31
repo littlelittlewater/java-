@@ -24,11 +24,11 @@ public class ClientHandle implements Runnable {
         this.port = port;
         try {
             //创建选择器
-            selector = Selector.open();
+            this.selector = Selector.open();
             //打开监听通道
-            socketChannel = SocketChannel.open();
+            this.socketChannel = SocketChannel.open();
             //如果为 true，则此通道将被置于阻塞模式；如果为 false，则此通道将被置于非阻塞模式
-            socketChannel.configureBlocking(false);//开启非阻塞模式
+            this.socketChannel.configureBlocking(false);//开启非阻塞模式
             started = true;
         } catch (IOException e) {
             e.printStackTrace();
@@ -43,7 +43,8 @@ public class ClientHandle implements Runnable {
     @Override
     public void run() {
         try {
-            doConnect();
+            if(!socketChannel.connect(new InetSocketAddress(host, port)))
+                socketChannel.register(selector, SelectionKey.OP_CONNECT);
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(1);
@@ -121,10 +122,12 @@ public class ClientHandle implements Runnable {
         }
     }
 
+
     //异步发送消息
-    private void doWrite(SocketChannel channel, String request) throws IOException {
+    public void sendMsg(String msg) throws Exception {
+        socketChannel.register(selector, SelectionKey.OP_READ);
         //将消息编码为字节数组
-        byte[] bytes = request.getBytes();
+        byte[] bytes = msg.getBytes();
         //根据数组容量创建ByteBuffer
         ByteBuffer writeBuffer = ByteBuffer.allocate(bytes.length);
         //将字节数组复制到缓冲区
@@ -132,17 +135,7 @@ public class ClientHandle implements Runnable {
         //flip操作
         writeBuffer.flip();
         //发送缓冲区的字节数组
-        channel.write(writeBuffer);
+        socketChannel.write(writeBuffer);
         //****此处不含处理“写半包”的代码
-    }
-
-    private void doConnect() throws IOException {
-        if (socketChannel.connect(new InetSocketAddress(host, port))) ;
-        else socketChannel.register(selector, SelectionKey.OP_CONNECT);
-    }
-
-    public void sendMsg(String msg) throws Exception {
-        socketChannel.register(selector, SelectionKey.OP_READ);
-        doWrite(socketChannel, msg);
     }
 }

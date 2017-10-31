@@ -2,7 +2,6 @@ package nio;
 
 
 import util.Calculator;
-
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -15,8 +14,6 @@ import java.util.Set;
 
 /**
  * NIO服务端
- * @author yangtao__anxpp.com
- * @version 1.0
  */
 public class ServerHandle implements Runnable{
     private Selector selector;
