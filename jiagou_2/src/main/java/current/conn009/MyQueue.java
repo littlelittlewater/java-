@@ -2,10 +2,9 @@ package current.conn009;
 
 import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
+
 /**
- * 模拟Queue
- * @author alienware
- *
+ * 模拟queue
  */
 public class MyQueue {
 
