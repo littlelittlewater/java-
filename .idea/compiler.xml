@@ -2,13 +2,30 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Eclipse" />
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
     <annotationProcessing>
-      <profile name="Maven default annotation processors profile" enabled="true">
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
         <module name="javaConcurrencyInpractice" />
         <module name="javaIo" />
+        <module name="jiagou_2" />
         <module name="mianShi" />
         <module name="shenRuQianChuJUC" />
       </profile>
@@ -17,6 +34,7 @@
       <module name="java_concurrency_in_practice" target="1.8" />
       <module name="javaConcurrencyInpractice" target="1.8" />
       <module name="javaIo" target="1.8" />
+      <module name="jiagou_2" target="1.8" />
       <module name="learn" target="1.8" />
       <module name="mianShi" target="1.8" />
       <module name="shenRuQianChuJUC" target="1.8" />

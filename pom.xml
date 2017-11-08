@@ -25,6 +25,7 @@
         <module>javaIo</module>
         <module>shenRuQianChuJUC</module>
         <module>mianShi</module>
+        <module>jiagou_2</module>
     </modules>
 
     <dependencies>

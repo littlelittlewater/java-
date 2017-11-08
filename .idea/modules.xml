@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/javaConcurrencyInpractice/javaConcurrencyInpractice.iml" filepath="$PROJECT_DIR$/javaConcurrencyInpractice/javaConcurrencyInpractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaIo/javaIo.iml" filepath="$PROJECT_DIR$/javaIo/javaIo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jiagou_2/jiagou_2.iml" filepath="$PROJECT_DIR$/jiagou_2/jiagou_2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/learn.iml" filepath="$PROJECT_DIR$/.idea/learn.iml" />
       <module fileurl="file://$PROJECT_DIR$/mianShi/mianShi.iml" filepath="$PROJECT_DIR$/mianShi/mianShi.iml" />
       <module fileurl="file://$PROJECT_DIR$/shenRuQianChuJUC/shenRuQianChuJUC.iml" filepath="$PROJECT_DIR$/shenRuQianChuJUC/shenRuQianChuJUC.iml" />
