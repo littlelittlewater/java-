@@ -14,3 +14,5 @@ volatile:
 对volatile写操作会加入一个lock 而lock前缀在多核处理器会引发两件事情：（见二中的缓存一致性）
   （1）将当前处理器缓存行的数据会写回到系统内存。
   （2）这个写回内存的操作会引起在其他CPU里缓存了该内存地址的数据无效。
+
+对于volatile的有话可以参见 jiagou2/current/FalseSharing

@@ -33,15 +33,22 @@ public class NoBlockLinkedQueue<E>{
     public boolean put(E item) {
         Node<E> newNode = new Node<E>(item, null);
         while (true) {
+            //获取当前状态的尾指针
             Node<E> curTail = tail.get();
+            //获取尾指针的下一个位置
             Node<E> residue = curTail.next.get();
+            //当前位置的尾指针是否改变
             if (curTail == tail.get()) {
+                //尾指针的后一个是否为空
                 if (residue == null) /* A */ {
+                    //如果尾指针的后一个位置为空，就插入  如果此时线程有一个竞争导致失败的话
                     if (curTail.next.compareAndSet(null, newNode)) /* C */ {
-                        tail.compareAndSet(curTail, newNode) /* D */ ;
+                        //更新尾节点
+                        tail.compareAndSet(curTail, newNode) /* D */ ;  //不需要重试 因为第二个线程已经这样做了
                         return true;
                     }
                 } else {
+                    //尝试修改尾指针，因为尾指针后面不为空  可以做一个辅助
                     tail.compareAndSet(curTail, residue) /* B */;
                 }
             }
