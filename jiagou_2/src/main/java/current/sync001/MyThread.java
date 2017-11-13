@@ -13,7 +13,7 @@ public class MyThread extends Thread{
 	//synchronized加锁
 	public synchronized  void run(){
 		count--;
-		System.out.println(this.currentThread().getName() + " count = "+ count);
+		System.out.println(currentThread().getName() + " count = "+ count);
 	}
 	
 	public static void main(String[] args) {

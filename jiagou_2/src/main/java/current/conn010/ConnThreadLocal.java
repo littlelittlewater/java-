@@ -8,7 +8,7 @@ public class ConnThreadLocal {
 		th.set(value);
 	}
 	public void getTh(){
-		System.out.println(Thread.currentThread().getName() + ":" + this.th.get());
+		System.out.println(Thread.currentThread().getName() + ":" + th.get());
 	}
 	
 	public static void main(String[] args) throws InterruptedException {
