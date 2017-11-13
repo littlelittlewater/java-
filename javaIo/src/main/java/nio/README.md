@@ -1,3 +1,4 @@
+nio 与 bio 最重要的一点是没有线程间的切换  性能较高
 下面是JAVA NIO中的一些主要Channel的实现：
  * FileChannel
  * DatagramChannel
@@ -58,5 +59,6 @@ Scatter/Gather
 Selector
   * Selector允许单线程处理多个 Channel。
   * 要使用Selector，得向Selector注册Channel，然后调用它的select()方法。这个方法会一直阻塞到某个注册的通道有事件就绪。一旦这个方法返回，线程就可以处理这些事件，事件的例子有如新连接进来，数据接收等。
+
 
 

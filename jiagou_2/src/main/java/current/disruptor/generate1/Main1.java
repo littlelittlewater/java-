@@ -7,6 +7,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+/**
+ * 使用的EventProcessor
+ */
 public class Main1 {  
    
 	public static void main(String[] args) throws Exception {  
@@ -25,7 +28,7 @@ public class Main1 {
             }  
         }, BUFFER_SIZE, new YieldingWaitStrategy());  
         
-        //创建线程池  
+        //创建线程池   固定缓存线程池
         ExecutorService executors = Executors.newFixedThreadPool(THREAD_NUMBERS);  
         
         //创建SequenceBarrier  
@@ -42,7 +45,9 @@ public class Main1 {
         executors.submit(transProcessor);  
         
         //如果存在多个消费者 那重复执行上面3行代码 把TradeHandler换成其它消费者类  
-          
+
+
+        //生产数据
         Future<?> future= executors.submit(new Callable<Void>() {  
             @Override  
             public Void call() throws Exception {  
