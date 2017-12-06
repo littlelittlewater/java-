@@ -26,9 +26,28 @@
         <module>shenRuQianChuJUC</module>
         <module>mianShi</module>
         <module>jiagou_2</module>
+        <module>zookeeper_practice</module>
     </modules>
 
     <dependencies>
+
+
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.4.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.101tec</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.41</version>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>

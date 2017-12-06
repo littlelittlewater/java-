@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/learn.iml" filepath="$PROJECT_DIR$/.idea/learn.iml" />
       <module fileurl="file://$PROJECT_DIR$/mianShi/mianShi.iml" filepath="$PROJECT_DIR$/mianShi/mianShi.iml" />
       <module fileurl="file://$PROJECT_DIR$/shenRuQianChuJUC/shenRuQianChuJUC.iml" filepath="$PROJECT_DIR$/shenRuQianChuJUC/shenRuQianChuJUC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zookeeper_practice/zookeeper_practice.iml" filepath="$PROJECT_DIR$/zookeeper_practice/zookeeper_practice.iml" />
     </modules>
   </component>
 </project>
