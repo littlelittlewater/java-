@@ -22,6 +22,7 @@
     <orderEntry type="library" name="Maven: org.apache.curator:curator-framework:2.4.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.curator:curator-client:2.4.2" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:14.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.curator:curator-recipes:2.4.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.zookeeper:zookeeper:3.4.6" level="project" />
     <orderEntry type="library" name="Maven: com.101tec:zkclient:0.2" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.41" level="project" />
